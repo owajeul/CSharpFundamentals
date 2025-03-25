@@ -7,8 +7,20 @@ namespace CSharpFundamentals
     {
         static void Main()
         {
-           List<string> likers = FacebookLike.GetLikers();
-           FacebookLike.DisplayLikeMessage(likers);
+            Console.WriteLine("Enter hyphen separated number sequence.");
+            var userInput = Console.ReadLine();
+
+            List<int> numbers = InputExtractor.GetHyphenSeparatedNumbers(userInput);
+
+            if(ConsecutiveNumbers.IsConsecutiveSequence(numbers))
+            {
+                Console.WriteLine("Consecutive.");
+            }
+            else
+            {
+                Console.WriteLine("Not consecutive.");
+            }
+           
         }
     }
 }
